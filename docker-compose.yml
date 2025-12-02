@@ -8,9 +8,9 @@ services:
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: rootpassword
-      MYSQL_DATABASE: umkm_db
-      MYSQL_USER: user
-      MYSQL_PASSWORD: password
+      MYSQL_DATABASE: hackathon_imphnen
+      MYSQL_USER: tunggubang
+      MYSQL_PASSWORD: user123
     ports:
       - "3306:3306"
     volumes:
@@ -25,14 +25,14 @@ services:
     ports:
       - "8080:80" # Akses di localhost:8080
     volumes:
-      - ./backend:/var/www/html # Hot-reload: edit file di laptop, langsung berubah di container
+      - ./backend:/var/www/html 
     depends_on:
       - db
     environment:
       DB_HOST: db
-      DB_USER: user
-      DB_PASS: password
-      DB_NAME: umkm_db
+      DB_USER: tunggubang
+      DB_PASS: user123
+      DB_NAME: hackathon_imphnen
 
   # Service 3: Frontend (Next.js)
   frontend:
