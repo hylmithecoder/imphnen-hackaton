@@ -17,7 +17,7 @@ string HelperBuild::BuildFrontend(const string& root) {
     if (!FolderExists(path)) 
         return "Frontend folder not found.";
 
-    return RunCmd("cd " + path + " && sudo docker build -t frontend_app .");
+    return RunCmd("cd " + path + " && docker build -t frontend_app .");
 }
 
 string HelperBuild::BuildBackend(const string& root) {
@@ -26,11 +26,11 @@ string HelperBuild::BuildBackend(const string& root) {
     if (!FolderExists(path)) 
         return "Backend folder not found.";
 
-    return RunCmd("cd " + path + " && sudo docker build -t backend_app .");
+    return RunCmd("cd " + path + " && docker build -t backend_app .");
 }
 
 string HelperBuild::BuildWeb(const string& root) {
-    return RunCmd("sudo docker compose up -d");
+    return RunCmd("docker compose up -d --build");
 }
 
 string HelperBuild::BuildMobile(const string& root) {

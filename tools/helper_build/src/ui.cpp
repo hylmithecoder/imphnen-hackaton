@@ -8,6 +8,7 @@ void HelperBuild::RunUI(const std::string& root_path) {
 
     std::string logs = "Ready.";
     int selected = 0;
+    int selected_run = 0;
 
     std::vector<std::string> menu_entries = {
         "Build Web (Frontend + Backend)",
@@ -27,7 +28,7 @@ void HelperBuild::RunUI(const std::string& root_path) {
             menu->Render() | frame | border,
             separator(),
             text("Logs:"),
-            text(logs) | color(Color::Blue),
+            text(logs) | color(Color::BlueViolet),
         }) | border;
     });
 
